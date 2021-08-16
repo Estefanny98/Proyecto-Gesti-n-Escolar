@@ -1,0 +1,52 @@
+/*
+ Esta clase genera nombres y los une aleatoriamente, a partir de las diversas opciones que contiene un String previamente creado
+Se implementara en el tratamiento de colecciones -> CRUD
+ */
+package programa_gestionescolar;
+
+import java.util.Random;
+
+/*
+* @author Garcia Monjaraz Jessica Stephanie
+ * @author Reyna Hernandez Omara Ajany
+ * @author Santiago Castro Estefanny Montsserrat
+*/
+public class Modulo_GenNombres {
+    public static String[] NombresAlea(int cantidad) {
+    
+    int y=1;
+    String[] nombresAleatorios = new String[cantidad];
+
+    String[] nom = { "Andrea", "David", "Bruno", "Brenda", "Francisco", "Dylan", "Mariana", "Alejandro","Roberto", "Fernando", "Carlos", "Daniela", "Jorge", "Ricardo", "Margarita", "Antonio", "Carla","Veronica", "Leticia", "Josefina", "Emiliano", "Adrian", "Alberto", "Alan", "Gabriel", "Uriel","Viridiana", "Hugo", "Alicia", "Susana"};
+    String[] ap1 = { "Juarez", "Ramos", "Cardenas", "Dominguez", "Herrera", "Medina", "Castro", "Vargas","Guzman", "Velazquez", "Rojas", "de la Cruz", "Contreras", "Salazar", "Luna", "Ortega", "Santiago","Guerrero", "Estrada", "Bautista", "Cortes", "Soto", "Alvarado", "Espinoza", "Lara", "Avila","Rios", "Cervantes", "Silva", "Leon"};
+    String[] ap2 = { "Hernandez", "Garcia", "Martinez", "Lopez", "Gonzales", "Perez", "Rodriguez", "Sanchez","Ramirez", "Cruz", "Flores", "Gomez", "Morales", "Vazquez", "Reyes", "Jimenez", "Torres","Diaz", "Gutierres", "Ruiz", "Mendoza", "Aguilar","Ortiz", "Moreno", "Castillo", "Romero", "Alvarez", "Mendez", "Chavez", "Rivera"};
+
+    
+    for (int n = 0; n < cantidad; n++) {
+	nombresAleatorios[n] = "Nombre del alumno "+ y + ":  " + nom[(int) (Math.floor(Math.random() * ((nom.length - 1) - 0 + 1) + 0))] + " "+ ap1[(int) (Math.floor(Math.random() * ((ap1.length - 1) - 0 + 1) + 0))]  + " "+ ap2[(int) (Math.floor(Math.random() * ((ap2.length - 1) - 0 + 1) + 0))];
+        y=y+1;	
+    }
+	return nombresAleatorios;
+        
+}
+
+
+public static void imprimir(String[] nomAleatorios) {
+    int min_val = 18;
+    int max_val = 27;
+    int y=1;
+    for (int n = 0; n < nomAleatorios.length; n++) {
+    System.out.println(nomAleatorios[n]);}
+   
+Direcciones_txt a = new Direcciones_txt ();
+   System.out.println(a.leerTxt("C:\\\\\\\\\\\\\\\\Users\\\\\\\\\\\\\\\\Bienvenido\\\\\\\\\\\\\\\\OneDrive\\\\\\\\\\\\\\\\Documentos\\\\\\\\\\\\\\\\NetBeansProjects\\\\\\\\\\\\\\\\txt\\\\\\\\\\\\\\\\direcciones.txt")); //DIRECCIONES
+   
+   Random rand = new Random();
+        for (int n = 1; n <= 100; n++) {
+        int numRandom = min_val + rand.nextInt((max_val - min_val) + 1);
+        System.out.println( "\n" + "Edad del alumno " +y+ ":  " +numRandom);
+            y=y+1;
+}	
+   
+}
+}	
